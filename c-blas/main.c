@@ -156,7 +156,7 @@ void benchmark_matrices(const int times_to_run, const int M, const int N, const 
 
     gettimeofday(&start, NULL);
     for (int i = 0; i < times_to_run; i++) {
-        reset_C(M, N, C);
+        //reset_C(M, N, C);
         multiply_avx256(A, B, C, M, N, K);
     }
     gettimeofday(&end, NULL);
@@ -170,7 +170,7 @@ void benchmark_matrices(const int times_to_run, const int M, const int N, const 
 
     gettimeofday(&start, NULL);
     for (int i = 0; i < times_to_run; i++) {
-        reset_C(M, N, C);
+        //reset_C(M, N, C);
         cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, M, N, K, 1, A, K, B, N, 1, C, N);
     }
     gettimeofday(&end, NULL);

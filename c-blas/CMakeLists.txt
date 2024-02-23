@@ -8,7 +8,8 @@ project(c_blas C)
 set(CMAKE_C_STANDARD 11)
 
 add_compile_options(-msse4.1 -mavx)
-#set(CMAKE_C_FLAGS_RELEASE "-O3")
+set(CMAKE_C_FLAGS_RELEASE "-Ofast")
+set(CMAKE_CXX_FLAGS_RELEASE "-Ofast")
 
 find_package(OpenBLAS CONFIG REQUIRED)
 

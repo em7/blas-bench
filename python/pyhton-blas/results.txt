@@ -1,0 +1,15 @@
+Benchmarking with dimensions m, n, k: 15, 15, 30
+Starting NumPy
+Numpy took 55.8 ms.
+Starting plain Python
+Plain Python took 486.0 ms.
+Benchmarking with dimensions m, n, k: 150, 150, 300
+Starting NumPy
+Numpy took 466.6 ms.
+Starting plain Python
+Plain Python took 488623.9 ms.
+Benchmarking with dimensions m, n, k: 1500, 1500, 3000
+Starting NumPy
+Numpy took 70328.7 ms.
+Starting plain Python
+DID NOT FINISH WITHIN 5 minutes
