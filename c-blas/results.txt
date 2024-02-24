@@ -1,15 +1,16 @@
+Runnin Plain C!
 Benchmarking for matrices of dimenstions M, N, K: 15, 15, 30
 Time for Plain C is 4 us
-Time for AVX 128bit is 3 us
-Time for AVX 256bit 2 us
-Time for OpenBLAS is 29 us
+Time for AVX 128bit is 4 us
+Time for AVX 256bit 3 us
+Time for OpenBLAS is 31 us
 Benchmarking for matrices of dimenstions M, N, K: 150, 150, 300
-Time for Plain C is 4137 us
-Time for AVX 128bit is 3407 us
-Time for AVX 256bit 1499 us
-Time for OpenBLAS is 1956 us
+Time for Plain C is 4289 us
+Time for AVX 128bit is 3177 us
+Time for AVX 256bit 1582 us
+Time for OpenBLAS is 1602 us
 Benchmarking for matrices of dimenstions M, N, K: 1500, 1500, 3000
-Time for Plain C is 8990420 us
-Time for AVX 128bit is 4606923 us
-Time for AVX 256bit 1499101 us
-Time for OpenBLAS is 1211174 us
+Time for Plain C is 9112229 us
+Time for AVX 128bit is 4870763 us
+Time for AVX 256bit 1523133 us
+Time for OpenBLAS is 1223569 us

@@ -191,13 +191,13 @@ int main() {
     //const int times_to_run = 100;
     const int times_to_run = 1;
 
-    int M = 15, N = 15, K = 30;
+    int M = 16, N = 16, K = 32;
     benchmark_matrices(times_to_run, M, N, K);
 
-    M = 150, N = 150, K = 300;
+    M = 256, N = 256, K = 512;
     benchmark_matrices(times_to_run, M, N, K);
 
-    M = 1500, N = 1500, K = 3000;
+    M = 1024, N = 1024, K = 2048;
     benchmark_matrices(times_to_run, M, N, K);
 
     return 0;
