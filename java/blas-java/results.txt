@@ -1,15 +1,21 @@
-Benchmarking matrices m, n, k: 15, 15, 30
+Benchmarking matrices m, n, k: 16, 16, 32
 Starting Plain Java
-Plain Java took 72 us
+Plain Java took 91 us
+Starting SIMD max
+SIMD max took 259 us
 Starting ND4j
-ND4j took 69 us
-Benchmarking matrices m, n, k: 150, 150, 300
+ND4j took 105 us
+Benchmarking matrices m, n, k: 256, 256, 512
 Starting Plain Java
-Plain Java took 6445 us
+Plain Java took 36042 us
+Starting SIMD max
+SIMD max took 22607 us
 Starting ND4j
-ND4j took 515 us
-Benchmarking matrices m, n, k: 1500, 1500, 3000
+ND4j took 961 us
+Benchmarking matrices m, n, k: 1024, 1024, 2048
 Starting Plain Java
-Plain Java took 29815777 us
+Plain Java took 7128234 us
+Starting SIMD max
+SIMD max took 1866623 us
 Starting ND4j
-ND4j took 84328 us
+ND4j took 18814 us

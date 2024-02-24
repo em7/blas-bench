@@ -22,8 +22,8 @@
         <configuration>
           <source>21</source>
           <target>21</target>
-<!--          <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
-<!--          <compilerArgs>&#45;&#45;add-modules=jdk.incubator.vector</compilerArgs>-->
+          <compilerArgs>--enable-preview</compilerArgs>
+          <compilerArgs>--add-modules=jdk.incubator.vector</compilerArgs>
         </configuration>
       </plugin>
     </plugins>
