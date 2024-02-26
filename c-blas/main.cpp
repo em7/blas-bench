@@ -102,10 +102,13 @@ void multiply_avx256(
     }
 }
 
-void multiply_openBLAS(double *A, double *B, double *C, const int M, const int K, const int N) {
-    cblas_dgemm(CblasColMajor, CblasNoTrans, CblasNoTrans, M, N, K, 1, A, M, B, K, 1, C, M);
+void transpose_matrix(const int K, const int N, const double *A, double *T) {
+    for (int n = 0; n < N; n++) {
+        for (int k = 0; k < K; k++) {
+            T[k * N + n] = A[n * K + k];
+        }
+    }
 }
-
 
 void benchmark_matrices(const int times_to_run, const int M, const int N, const int K) {
     std::cout << "Benchmarking for matrices of dimenstions M, N, K: " << M << ", " << N << ", " << K << ", " << std::endl;
@@ -120,6 +123,11 @@ void benchmark_matrices(const int times_to_run, const int M, const int N, const 
         std::cerr << "Could not allocate for B" << std::endl;
         return;
     }
+    double *Bt = static_cast<double *>(malloc(sizeof(double) * K * N));
+    if (NULL == Bt) {
+        std::cerr << "Could not allocate for Bt" << std::endl;
+        return;
+    }
     double *C = static_cast<double *>(malloc(sizeof(double) * M * N));
     if (NULL == C) {
         std::cerr << "Could not allocate for C" << std::endl;
@@ -127,6 +135,7 @@ void benchmark_matrices(const int times_to_run, const int M, const int N, const 
     }
     set_MX(M, K, A);
     set_MX(K, N, B);
+    transpose_matrix(K, N, B, Bt);
 
     std::chrono::time_point<std::chrono::system_clock> start, end;
     long long duration;
@@ -174,6 +183,15 @@ void benchmark_matrices(const int times_to_run, const int M, const int N, const 
     end = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
     std::cout << "Time for OpenBLAS is " << duration << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    for (int i = 0; i < times_to_run; i++) {
+        //reset_C(M, N, C);
+        cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasTrans, M, N, K, 1, A, K, Bt, K, 1, C, N);
+    }
+    end = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+    std::cout << "Time for OpenBLAS transposed is " << duration << std::endl;
     // printf("OpenBLAS result\n");
     // print_C(M, N, C);
 

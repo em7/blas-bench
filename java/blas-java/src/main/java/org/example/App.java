@@ -73,6 +73,9 @@ public class App {
         double[][] mxC = new double[m][n];
         long startNanoSec, endNanoSec, durationUs;
 
+        String backend = Nd4j.getBackend().getClass().getSimpleName();
+        System.out.println(backend);
+
         initializeMx(mxA);
         initializeMx(mxB);
         mxBt = transposeMatrix(mxB);
