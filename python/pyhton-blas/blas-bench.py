@@ -45,10 +45,10 @@ def benchmark(m, n, k, number_of_iterations):
 
 
 number_of_iterations = 1
-benchmark(15, 15, 30, number_of_iterations)
+benchmark(16, 16, 32, number_of_iterations)
 
-benchmark(150, 150, 300, number_of_iterations)
+benchmark(256, 256, 512, number_of_iterations)
 
-#benchmark(1500, 1500, 3000, number_of_iterations)
+benchmark(1024, 1024, 2048, number_of_iterations)
 
 

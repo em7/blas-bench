@@ -19,3 +19,30 @@ Starting SIMD max
 SIMD max took 1866623 us
 Starting ND4j
 ND4j took 18814 us
+
+OLD pc
+
+CpuBackend
+Benchmarking matrices m, n, k: 16, 16, 32
+Starting Plain Java
+Plain Java took 198 us
+Starting SIMD max
+SIMD max took 845 us
+Starting ND4j
+ND4j took 312 us
+CpuBackend
+Benchmarking matrices m, n, k: 256, 256, 512
+Starting Plain Java
+Plain Java took 259107 us
+Starting SIMD max
+SIMD max took 285611 us
+Starting ND4j
+ND4j took 3731 us
+CpuBackend
+Benchmarking matrices m, n, k: 1024, 1024, 2048
+Starting Plain Java
+Plain Java took 30721266 us
+Starting SIMD max
+SIMD max took 14141104 us
+Starting ND4j
+ND4j took 106884 us

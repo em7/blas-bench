@@ -13,3 +13,18 @@ Plain C took 10747975
 Time for AVX 128bit is 4071588
 Time for AVX 256bit is 2406826
 Time for OpenBLAS is 385200
+
+OLD PC
+Benchmarking for matrices of dimenstions M, N, K: 16, 16, 32,
+Plain C took 14
+Time for OpenBLAS is 61
+Time for OpenBLAS transposed is 6
+Benchmarking for matrices of dimenstions M, N, K: 256, 256, 512,
+Plain C took 74278
+Time for OpenBLAS is 3180
+Time for OpenBLAS transposed is 3184
+Benchmarking for matrices of dimenstions M, N, K: 1024, 1024, 2048,
+Plain C took 45595360
+Time for OpenBLAS is 183332
+Time for OpenBLAS transposed is 181663
+

@@ -8,8 +8,7 @@ void print_res_mx(int m, int p, double **res) {
     std::cout << "Resulting matrix is" << std::endl;
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < p; j++) {
-            std::cout << std::fixed << std::setprecision(2) << std::setw(5) <<
-                    res[i][j] << ' ';
+		std::cout << res[i][j] << ' ';
         }
         std::cout << std::endl;
     }
@@ -153,23 +152,23 @@ void benchmark_matrices(const int times_to_run, const int M, const int N, const 
     // print_res_mx(m, p, res);
 
     // SIMD
-    start = std::chrono::high_resolution_clock::now();
-    for (int i = 0; i < times_to_run; i++) {
-        reset_C(M, N, C);
-        multiply_avx128(A, B, C, M, N, K);
-    }
-    end = std::chrono::high_resolution_clock::now();
-    duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
-    std::cout << "Time for AVX 128bit is " << duration << std::endl;
-
-    start = std::chrono::high_resolution_clock::now();
-    for (int i = 0; i < times_to_run; i++) {
-        //reset_C(M, N, C);
-        multiply_avx256(A, B, C, M, N, K);
-    }
-    end = std::chrono::high_resolution_clock::now();
-    duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
-    std::cout << "Time for AVX 256bit is " << duration << std::endl;
+    // start = std::chrono::high_resolution_clock::now();
+    // for (int i = 0; i < times_to_run; i++) {
+    //     reset_C(M, N, C);
+    //     multiply_avx128(A, B, C, M, N, K);
+    // }
+    // end = std::chrono::high_resolution_clock::now();
+    // duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+    // std::cout << "Time for AVX 128bit is " << duration << std::endl;
+    //
+    // start = std::chrono::high_resolution_clock::now();
+    // for (int i = 0; i < times_to_run; i++) {
+    //     //reset_C(M, N, C);
+    //     multiply_avx256(A, B, C, M, N, K);
+    // }
+    // end = std::chrono::high_resolution_clock::now();
+    // duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+    // std::cout << "Time for AVX 256bit is " << duration << std::endl;
 
 
     // OpenBLAS
